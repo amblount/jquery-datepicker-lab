@@ -4,6 +4,7 @@ var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", 
 var curr_date = today.getDate();
 var curr_month = today.getMonth();
 var curr_year = today.getFullYear();
+var message = "You have " + diffDays + " days left!"
 
 $("#todayDate").html(m_names[curr_month] + ". " + curr_date + ", " + curr_year);
 $("#datepicker").datepicker();
@@ -26,10 +27,9 @@ $("#datepicker").on("change", function(){
 // 14. Now, instead of console.log, let's update the HTML string every time the user clicks a date.
 // Use jQuery to write the result string in the element with an id of 'result'
 
-// _____
+$('#result').html(message);
 
 });
 
 // UH-OH! We defined the variable inside daysLeft and we need the same data in our .on('change', function(){})
 // 15. Define the variable globally and leave your local variable references alone.
-
